@@ -1,0 +1,20 @@
+database: &common_database
+  host: db.example.net
+  port: 3306
+  user: hpaung
+  password: mypassword
+  name: mydb
+  enabled: true
+  legacy: yes
+
+database_new: *common_database
+
+prod_db:
+  <<: *common_database
+  host: prod-db.example.com
+  password: myprodpassword
+
+dev_db:
+  <<: *common_database
+  host: localhost
+  password: mydevpassword
